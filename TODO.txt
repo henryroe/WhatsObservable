@@ -1,0 +1,20 @@
+
+# ASAP
+
+## Make `__version__` updates automatic in modules
+
+## create a test suite
+
+
+# Known Bugs
+
+
+
+# Someday/Maybe
+
+## Implement arbitrary user specified latitude/longitudes
+
+## automatically fetch ObsCodes.html if not already on disk
+
+## automatically fetch MPCORB.DAT if not already on disk
+

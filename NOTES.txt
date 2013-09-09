@@ -1,0 +1,30 @@
+**2013-09-02 18:38:58MST:**  Project started after realized that getting PyEphem to work to an acceptable level of precision so as to be able to replace JPL/Horizons was not realistically feasible (with level of effort I was willing anyway.)  
+
+(See evernote notes)[evernote:///view/37118715/s286/6dfedff3-d0af-42db-ab09-57141ef78f75/6dfedff3-d0af-42db-ab09-57141ef78f75/]
+
+But, given that the Horizons What's Up? capability is not easily scripted (and lacks some parameters that would be nice) it does seem worthwhile to pursue using PyEphem for that.
+
+
+# Top level requirements for MPWhatsup
+
+*written 2013-09-07 13:32:36MST:*
+
+* **Input:**  Selection criteria
+    * Observatory code
+    * Time to search  
+    * Max zenith distance (deg)
+    * Max visual magnitude
+    * Max number of objects to return
+    * Some day:
+        * optional Time Range
+        * Minimum duration above max airmass
+* **Output:** Return is a pandas DataFrame
+    * Asteroid Number
+    * Asteroid Name
+    * apparent magnitude
+    * rise/set/transit
+    * radec
+    * Some day:
+        * if time range given, then radec at min airmass
+        * time of min airmass
+
