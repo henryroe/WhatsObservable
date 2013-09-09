@@ -320,7 +320,6 @@ def minorplanets(in_datetime, observatory_code,
                                         if ((max_topocentric_distance_AU is None) or
                                             (eph.earth_distance <= max_topocentric_distance_AU)):
                                             matching_objects.append(eph)
-                                            print eph
             else:
                 if line.startswith('-------------------'):
                     in_header = False
