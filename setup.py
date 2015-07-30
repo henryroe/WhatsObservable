@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='WhatsObservable',
-      version='0.1.1',
+      version='0.1.1a',
       description='Determine which small solar system bodies are observable from a given location at a given time',
       long_description=open('README.txt').read(),
       author='Henry Roe',
