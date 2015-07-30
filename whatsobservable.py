@@ -7,7 +7,7 @@ import pdb
 from pandas import DataFrame
 
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 
 class Error(Exception):
@@ -38,6 +38,8 @@ def _find_cached_file(filename):
 def get_latlon_from_observatory_code(code):
     if type(code) is int:
         code = '%03i' % code
+    elif type(code) is str:
+        code = code[:3]  # trim any remainder, like @399
     try:
         obscode_filename = _find_cached_file('ObsCodes.html')
         # TODO: add a verbose option to print path to ObsCodes.html
@@ -328,9 +330,9 @@ def minorplanets(in_datetime, observatory_code,
                     break
     name = [a.name for a in matching_objects]
     d = {}
-    d['rise_time'] = [a.rise_time.datetime() for a in matching_objects]
-    d['transit_time'] = [a.transit_time.datetime() for a in matching_objects]
-    d['set_time'] = [a.set_time.datetime() for a in matching_objects]
+    d['rise_time'] = [a.rise_time.datetime() if a.rise_time is not None else np.nan for a in matching_objects]
+    d['transit_time'] = [a.transit_time.datetime() if a.transit_time is not None else np.nan for a in matching_objects]
+    d['set_time'] = [a.set_time.datetime() if a.set_time is not None else np.nan for a in matching_objects]
     d['raJ2000_deg'] = [np.degrees(a.a_ra) for a in matching_objects]
     d['decJ2000_deg'] = [np.degrees(a.a_dec) for a in matching_objects]
     d['mag'] = [a.mag for a in matching_objects]
