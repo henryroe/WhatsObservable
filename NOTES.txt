@@ -28,3 +28,17 @@ But, given that the Horizons What's Up? capability is not easily scripted (and l
         * if time range given, then radec at min airmass
         * time of min airmass
 
+
+# releasing a version
+
+- change version number in whatsobservable.py
+- change version number in setup.py
+- make note in CHANGES.txt
+- make sure everything is committed with git
+- Then, e.g.:
+
+    git tag -a 0.1.1a -m "Tagged for version 0.1.1a"
+    git push origin 0.1.1a
+    python setup.py sdist
+    python setup.py bdist_wheel
+    twine upload -r pypi dist/*
