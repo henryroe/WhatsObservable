@@ -1,3 +1,5 @@
+v0.1.2,  2016-07-28 -- formal release to push out bugfixes
+
 v0.1.1a, 2015-07-30 -- bugfix for the (rare) situation when an asteroid doesn't transit during a day (b/c transits just before midnight day prior and just after midnight next day).  Same fix applied for if asteroid doesn't set or rise in a day.
 
 v0.1.1, 2015-07-30 -- initial attempt at bugfix (fixed in 0.1.1a), but mangled version numbers

@@ -7,7 +7,7 @@ import pdb
 from pandas import DataFrame
 
 
-__version__ = '0.1.1a'
+__version__ = '0.1.2'
 
 
 class Error(Exception):
